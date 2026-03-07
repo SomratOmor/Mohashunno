@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from api.generate import router
 
-app = FastAPI(title="AI Shorts Generator")
+app = FastAPI()
 
-app.include_router(router)
+@app.get("/")
+def home():
+    return {"message": "API working"}
