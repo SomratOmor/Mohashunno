@@ -3,4 +3,3 @@ uvicorn[standard]
 requests
 groq
 python-dotenv
-python-3.11
