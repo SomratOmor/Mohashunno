@@ -1,5 +1,6 @@
 fastapi
-uvicorn[standard]
-requests
+uvicorn
 groq
-python-dotenv
+requests
+cloudinary
+python-multipart
