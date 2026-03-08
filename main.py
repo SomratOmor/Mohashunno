@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from groq import Groq
 import cloudinary
 import cloudinary.uploader
+import uvicorn
 
 app = FastAPI()
 
@@ -103,3 +104,9 @@ async def upload_image(file: UploadFile = File(...)):
     return {
         "image_url": result["secure_url"]
     }
+
+
+# -------- SERVER START --------
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
